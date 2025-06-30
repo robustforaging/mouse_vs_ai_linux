@@ -1,0 +1,29 @@
+name: mouse2
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8.10
+  - pip
+  - sqlite
+  - openssl
+  - libiconv
+  - ca-certificates
+  - certifi
+  - pip:
+    - numpy==1.21.2
+    - pandas==2.0.3
+    - scipy==1.10.1
+    - matplotlib 
+    - gym==0.26.2
+    - gymnasium==0.28.1
+    - pettingzoo==1.23.1
+    - mlagents==0.29.0
+    - mlagents-envs==0.29.0
+    - onnx==1.14.1
+    - onnxruntime==1.12.1
+    - tensorboard
+    - pyyaml==6.0.2
+    - requests==2.32.4
+    - packaging==25.0
+    - protobuf==3.20.3
