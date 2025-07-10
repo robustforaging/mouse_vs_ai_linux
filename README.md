@@ -50,11 +50,15 @@ Update the path to point to the location of ```encoders.py``` in your conda envi
 
 
 # Run script
-To get started, run:
 ```bash
-python start.py
+Usage: python train.py [train|test] [options]
+
+Training options:
+  --runs-per-network R    Number of runs per network (default: 5)
+  --env ID                Run identifier (default: Normal) [defines type of environment]
+  --network N1,N2,N3     Comma-separated list of networks to train
+                         (default choices: ['fully_connected', 'nature_cnn', 'simple', 'resnet'])
 ```
-TODO
 
 ## Training
 Example command for training:
