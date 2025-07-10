@@ -1,4 +1,3 @@
-"# Linux build for Robust Foraging" 
 # Linux Training Guide
 
 Welcome to **Mouse vs. AI: Robust Visual Foraging Challenge @ NeurIPS 2025**
