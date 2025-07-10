@@ -25,7 +25,7 @@ cd mouse_vs_ai_linux
 
 Then, create and activate the conda environment:
 ```bash
-conda env create -n mouse -f mouse.yml
+conda env create -n mouse -f mouse_linux.yml
 conda activate mouse
 ``` 
 💡 Troubleshooting: if the CUDA version isn’t compatible with your GPU, please try: 
@@ -63,7 +63,7 @@ Training options:
                          (default choices: ['fully_connected', 'nature_cnn', 'simple', 'resnet'])
 ```
 
-Example command:
+Example command for training:
 
 ```bash
 python train.py --runs-per-network 1 --env RandomTrain --network neurips,simple,fully_connected,resnet,alexnet
@@ -72,6 +72,16 @@ python train.py --runs-per-network 1 --env RandomTrain --network neurips,simple,
 - If the issue persists, stop the current training episode and train again
 
 ## Evaluating
+```text
+Usage: python evaluate.py [options]
+
+Evaluation options:
+  --model      Path to the trained ONNX model file
+  --episodes   Number of episodes to run in inference(default: 50)
+  --env        Build folder name under ./Builds/
+  --log-name   Base name for the output log file
+```
+
 Example command for evaluation:
 ```bash
 python evaluate.py --model "/home/<your_username>/path/to/your_model.onnx" --log-name "example.txt" --episodes 10
