@@ -34,6 +34,14 @@ conda activate mouse
 pip install torch==1.8.1+cu111 -f https://download.pytorch.org/whl/torch_stable.html
 ```
 
+# Set executable permissions for Linux binariesPermalink
+To make the Linux executable files executable:
+```bash
+chmod +x ./Builds/RandomTrain/LinuxHeadless.x86_64
+
+# If you have other build directories, make their executables executable too. For example:
+# chmod +x ./Builds/RandomTest/LinuxHeadless.x86_64
+```
 
 # Modify file path
 Open ```train.py``` and go to where ```replace.replace_nature_visual_encoder``` is called.
