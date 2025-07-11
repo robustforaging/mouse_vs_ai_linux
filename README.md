@@ -60,10 +60,10 @@ Training options:
   --runs-per-network R    Number of runs per network (default: 5)
   --env ID                Run identifier (default: Normal) [defines type of environment]
   --network N1,N2,N3     Comma-separated list of networks to train
-                         (default choices: ['fully_connected', 'nature_cnn', 'simple', 'resnet'])
-                          You can specify your own custom networks here as well. Just list their names, separated by commas.
-                         
-                      
+                         (default choices: ['fully_connected', 
+                         'nature_cnn', 'simple', 'resnet'])
+                          You can specify your own custom networks here as 
+                          well. Just list their names, separated by commas.
 ```
 
 Example command for training:
