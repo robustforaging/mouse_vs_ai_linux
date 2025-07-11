@@ -87,7 +87,7 @@ Evaluation options:
 
 Example command for evaluation:
 ```bash
-python evaluate.py --model "/home/<your_username>/path/to/your_model.onnx" --log-name "example.txt" --episodes 10
+python evaluate.py --model "/path/to/your_model.onnx" --log-name "example.txt" --episodes 10
 ```
 
 # Customize the model
@@ -96,6 +96,6 @@ python evaluate.py --model "/home/<your_username>/path/to/your_model.onnx" --log
   - To train your custom network, run ```python train.py --network MyNetwork1 [options]```
 - To adjust hyperparamters: 
   - Edit parameters in `/mouse_vs_ai_linux/Encoders/nature.yaml` file
-  - 📝 Note: Please do not change the name of the file. Only modify the configuration values as needed.
+  - 📝 Note: Please do not change the name of this file or the parameter `vis_encode_type` in this file. Only modify other configuration values as needed.
 
 After making your changes, run the Python training script as described above.
