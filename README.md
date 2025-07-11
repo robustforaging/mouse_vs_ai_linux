@@ -46,7 +46,7 @@ chmod +x ./Builds/RandomTrain/LinuxHeadless.x86_64
 Open ```train.py``` and go to where ```replace.replace_nature_visual_encoder``` is called.
 Update the path to point to the location of ```encoders.py``` in your conda environment.
 
-💡 Tip: The ```encoders.py``` file is usually located in your conda environment’s working directory. For example: ```…/miniconda3/env/mouse2/Lib/site-packages/mlagents/trainers/torch/encoders.py```
+📝 Note: The ```encoders.py``` file is usually located in your conda environment’s working directory. For example: ```…/miniconda3/env/mouse2/Lib/site-packages/mlagents/trainers/torch/encoders.py```
 
 
 # Run script
@@ -60,15 +60,18 @@ Training options:
   --runs-per-network R    Number of runs per network (default: 5)
   --env ID                Run identifier (default: Normal) [defines type of environment]
   --network N1,N2,N3     Comma-separated list of networks to train
-                         (default choices: ['fully_connected', 'nature_cnn', 'simple', 'resnet'])
+                         (default choices: ['fully_connected', 
+                         'nature_cnn', 'simple', 'resnet'])
+                          You can specify your own custom networks here as 
+                          well. Just list their names, separated by commas.
 ```
 
 Example command for training:
 
 ```bash
-python train.py --runs-per-network 1 --env RandomTrain --network neurips,simple,fully_connected,resnet,alexnet
+python train.py --runs-per-network 1 --env RandomTrain --network MyNetwork1, MyNetwork2
 ```
-- Troubleshooting: If training only proceeds after pressing ```ENTER```, try running the command with unbuffered output mode:  ```python -u start.py train --runs-per-network 1 --env Normal --network neurips,simple,fully_connected``` 
+- 💡 Troubleshooting: If training only proceeds after pressing ```ENTER```, try running the command with unbuffered output mode:  ```python -u train.py [options]``` 
 - If the issue persists, stop the current training episode and train again
 
 ## Evaluating
@@ -88,7 +91,11 @@ python evaluate.py --model "/home/<your_username>/path/to/your_model.onnx" --log
 ```
 
 # Customize the model
-- To change architecture: Add your model to the `/mouse_vs_ai_linux/Encoders` folder
-- To change hyperparamters: edit information in `/mouse_vs_ai_linux/Encoders/nature.yaml` file
+- To add architecture: 
+  - Add your model (e.g., `MyNetwork1.py`) to the `/mouse_vs_ai_linux/Encoders` directory
+  - To train your custom network, run ```python train.py --network MyNetwork1 [options]```
+- To adjust hyperparamters: 
+  - Edit parameters in `/mouse_vs_ai_linux/Encoders/nature.yaml` file
+  - 📝 Note: Please do not change the name of the file. Only modify the configuration values as needed.
 
-Then run the above python training script.
+After making your changes, run the Python training script as described above.
