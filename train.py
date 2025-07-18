@@ -119,7 +119,7 @@ def train_solo(run_id, env_path, config_path, total_runs=5, log_name=None):
         run_id_list.append(current)
     return run_id_list
 
-def train_multiple_networks(networks, env_path, runs_per_network=2, log_name=None, env='Normal'):
+def train_multiple_networks(networks, env_path, runs_per_network=2, log_name=None, env='NormalTrain'):
     run_id_list2 = []
     for network in networks:
         if network == "fully_connected":
@@ -148,7 +148,7 @@ if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser(description="Train multiple networks on MouseVsAI")
-    parser.add_argument("--env", type=str, default="Normal",
+    parser.add_argument("--env", type=str, default="NormalTrain",
                         help="Folder name under Builds/ to use as env")
     parser.add_argument("--runs-per-network", type=int, default=2,
                         help="How many runs per network variant")
